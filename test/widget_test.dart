@@ -5,7 +5,7 @@ import 'package:colorpicker/main.dart'; // Adjust the import path to your app
 void main() {
   testWidgets('Tapping a color panel regenerates colors',
       (WidgetTester tester) async {
-    await tester.pumpWidget(MyApp());
+    await tester.pumpWidget(const MyApp());
 
     // Get initial title
     String initialTitle = (tester.widget(find.byType(Text)) as Text).data ?? '';
@@ -25,7 +25,7 @@ void main() {
   });
 
   testWidgets('Generates four color panels', (WidgetTester tester) async {
-    await tester.pumpWidget(MyApp());
+    await tester.pumpWidget(const MyApp());
 
     // Check if four color panels are present
     final panels = find.byType(Container);
@@ -34,7 +34,7 @@ void main() {
 
   testWidgets('Tapping a color panel regenerates colors',
       (WidgetTester tester) async {
-    await tester.pumpWidget(MyApp());
+    await tester.pumpWidget(const MyApp());
 
     // Get the initial title
     final initialTitle = (tester.widget(find.byType(Text)) as Text).data;
@@ -44,7 +44,7 @@ void main() {
     await tester.tap(firstPanel);
 
     // Manually advance the clock by the duration of the delay
-    await tester.pump(Duration(milliseconds: 800));
+    await tester.pump(const Duration(milliseconds: 800));
 
     // Get the new title
     final newTitle = (tester.widget(find.byType(Text)) as Text).data;
